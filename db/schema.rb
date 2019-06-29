@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_29_041440) do
+ActiveRecord::Schema.define(version: 2019_06_29_041448) do
+
+  create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "address"
+    t.text "image"
+    t.text "site_url"
+    t.bigint "industry_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["industry_id"], name: "index_companies_on_industry_id"
+  end
 
   create_table "industry_master_data", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -31,4 +42,5 @@ ActiveRecord::Schema.define(version: 2019_06_29_041440) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "companies", "industry_master_data", column: "industry_id"
 end
