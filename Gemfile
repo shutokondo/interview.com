@@ -69,3 +69,4 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'sorcery'
 gem 'rake', '< 11.0'
+gem 'haml-rails', '~> 2.0'
