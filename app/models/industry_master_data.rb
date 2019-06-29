@@ -1,0 +1,2 @@
+class IndustryMasterData < ApplicationRecord
+end
