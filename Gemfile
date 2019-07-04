@@ -44,6 +44,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'factory_bot_rails'
   gem 'rubocop', '~> 0.72.0', require: false
+  gem 'pry-rails'
 end
 
 group :development do
@@ -54,6 +55,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'solargraph'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do
