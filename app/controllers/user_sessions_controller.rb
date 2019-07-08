@@ -4,7 +4,6 @@ class UserSessionsController < ApplicationController
   end
 
   def create
-
     if @user
       redirect_to root_path, notice: 'Login successful'
     else
