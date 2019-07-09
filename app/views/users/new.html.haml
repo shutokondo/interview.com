@@ -1,0 +1,16 @@
+.container
+  %h2 Sign Up
+
+  = form_with model: @user, local: true do |f|
+    .form-group
+      = f.label :email
+      = f.text_field :email, class: 'form-control'
+    .form-group
+      = f.label :password
+      = f.password_field :password, class: 'form-control'
+    .form-group
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation, class: 'form-control'
+    = f.submit '登録', class: 'btn btn-primary'
+
+  = link_to 'Googleアカウントで登録', auth_at_provider_path(provider: :google)
