@@ -21,6 +21,21 @@ ActiveRecord::Schema.define(version: 2019_07_05_125608) do
     t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
   end
 
+  create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "address"
+    t.text "image"
+    t.text "site_url"
+    t.bigint "industry_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["industry_id"], name: "index_companies_on_industry_id"
+  end
+
+  create_table "industry_master_data", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", null: false
     t.string "crypted_password"
@@ -36,4 +51,5 @@ ActiveRecord::Schema.define(version: 2019_07_05_125608) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "companies", "industry_master_data", column: "industry_id"
 end
