@@ -68,4 +68,4 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'sorcery'
-gem 'rake', '< 11.0'
+gem 'rake', '< 13.0'
